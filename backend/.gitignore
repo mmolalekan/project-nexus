@@ -1,0 +1,13 @@
+__pycache__
+venv
+.vscode
+*.env
+.venv/
+__pycache__/
+dump/
+*.log
+staticfiles/
+nohup.out
+dump.rdb
+celerybeat-schedule.db
+celerybeat-schedule
