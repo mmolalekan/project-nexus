@@ -104,3 +104,51 @@ export const CountdownIcon = () => {
     </svg>
   );
 };
+
+export const AdditionIcon = () => {
+  return (
+    <svg
+      width="21"
+      height="21"
+      viewBox="0 0 21 21"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M1.48535 10.2561H18.9896M10.2376 1.50397V19.0082"
+        stroke="#232323"
+        strokeWidth="2.18803"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M1.48535 10.2561H18.9896M10.2376 1.50397V19.0082"
+        stroke="black"
+        strokeOpacity="0.2"
+        strokeWidth="2.18803"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export const SubtractionIcon = () => {
+  return (
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M2.48535 11.7686H19.9896"
+        stroke="white"
+        strokeWidth="2.18803"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};

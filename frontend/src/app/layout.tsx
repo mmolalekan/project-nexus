@@ -3,6 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Toaster } from "sonner";
 import { Inter, Amiri } from "next/font/google";
+import { StateProvider } from "@/providers/stateProvider/provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,8 +38,10 @@ export default function RootLayout({
         <meta name="description" content={String(metadata.description)} />
       </head>
       <body className={`${inter.variable} ${amiri.variable} antialiased`}>
-        {children}
-        <Toaster richColors position="top-right" duration={5000} />
+        <StateProvider>
+          {children}
+          <Toaster richColors position="top-right" duration={5000} />
+        </StateProvider>
       </body>
     </html>
   );
