@@ -100,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # You don't have to use api.users.models.User
 # The format '<app_label>.<model_name>' is used to refer to the model
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
