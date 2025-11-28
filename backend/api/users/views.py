@@ -11,8 +11,13 @@ from rest_framework import status, generics
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
-from .serializers import (ProfileSerializer, RegisterSerializer,
-                          LoginSerializer, ForgotPasswordSerializer, ResetPasswordSerializer,)
+from .serializers import (
+    LoginSerializer,
+    ProfileSerializer,
+    RegisterSerializer,
+    ForgotPasswordSerializer,
+    ResetPasswordSerializer
+)
 
 
 load_dotenv()

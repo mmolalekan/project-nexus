@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Qurbaan Referral Code Was Used!</title>
+    <style>
+      /* Basic Reset & Font */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        line-height: 1.6;
+        color: #333333; /* Dark grey for readability */
+        background-color: #f8f8f8; /* Very light grey background */
+      }
+      /* Container for content */
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #ffffff; /* White content background */
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        text-align: center; /* Center content */
+      }
+      /* Header Styling */
+      .header {
+        font-size: 28px;
+        font-weight: bold;
+        color: #f58601; /* Blue for the brand name */
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #f58601; /* Subtle yellow line */
+      }
+      /* Main heading for the message */
+      h2 {
+        color: #0098cc; /* Blue for main heading */
+        font-size: 22px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+      }
+      /* Paragraph text */
+      p {
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      /* List styling for booking details */
+      ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0;
+        margin: 20px auto; /* Center the list */
+        max-width: 300px; /* Constrain width for better appearance */
+        text-align: left; /* Align text within list items to the left */
+      }
+      li {
+        background-color: #f0f8ff; /* Very light blue background for list items */
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        border-left: 3px solid #0098cc; /* Blue accent bar */
+        font-size: 15px;
+      }
+      strong {
+        color: #0098cc; /* Make strong text blue for emphasis */
+      }
+      /* Separator */
+      .separator {
+        border: 0;
+        height: 1px;
+        background-color: #f58601; /* Yellow separator */
+        margin: 30px auto;
+        width: 50%; /* Shorter separator */
+      }
+      /* Footer links */
+      .footer-link {
+        color: #0098cc; /* Blue for contact email */
+        text-decoration: none;
+      }
+      .footer-link:hover {
+        text_decoration: underline;
+      }
+      /* Responsive adjustments */
+      @media only screen and (max-width: 600px) {
+        .container {
+          margin: 20px;
+          padding: 20px;
+        }
+        .header {
+          font-size: 24px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+        p,
+        li {
+          font-size: 15px;
+        }
+        ul {
+          max-width: 100%; /* Allow list to take full width on small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">QURBAAN</div>
+
+      <h2>
+        Salamun alaykum
+        <span style="font-weight: bold">{{ referral.referrer.first_name }}</span
+        >,
+      </h2>
+
+      <p>
+        We are delighted to inform you that your unique Qurbaan referral code
+        has just been successfully used by
+        <span style="font-weight: bold">
+          {% if referral.referred.first_name %} {{referral.referred.first_name}}
+          {% else %} {{ referral.referred.email }} {% endif %}</span
+        >!
+      </p>
+      <p>
+        Your dedication to sharing the blessings of Qurbaan is truly valued. As
+        a token of our gratitude, you have earned a reward from this successful
+        booking.
+      </p>
+
+      <p style="font-weight: bold; color: #0098cc">
+        Associated Booking Details:
+      </p>
+      <ul>
+        <li>
+          <strong>Package Type:</strong> {{ booking.package_type|capfirst }}
+        </li>
+        {# Added package_type #}
+        <li><strong>Slots:</strong> {{ booking.slots }}</li>
+        {# Added slots #}
+        <li><strong>Booking Date:</strong> {{ booking.created_at }}</li>
+        <li><strong>Amount Earned:</strong> ₦{{ amount_earned }}</li>
+      </ul>
+
+      <p>
+        You can view your updated total earnings and track all your successful
+        referrals directly on your Qurbaan app profile.
+      </p>
+      <p>
+        Thank you once again for being a cherished part of the Qurbaan community
+        and helping us facilitate this noble act.
+      </p>
+
+      <div class="separator"></div>
+
+      <p style="margin-top: 20px; font-style: italic; color: #555555">
+        – The Qurbaan Team
+      </p>
+    </div>
+  </body>
+</html>
