@@ -28,7 +28,7 @@ export const handleLogIn = async (
     const response = await authBasicAPI.post(ENDPOINTS.LOGIN, payload);
     if (response.status === 200) {
       router.push("/dashboard");
-      toast.success("Salaamun alaykum, Welcome back!");
+      toast.success("Welcome back!");
     }
   } catch (error: any) {
     if (error.response.status === 401)
