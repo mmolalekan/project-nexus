@@ -34,6 +34,10 @@ class BookingViewSet(viewsets.ReadOnlyModelViewSet):
         """
         Filter bookings to only show the current user's bookings.
         """
+        if getattr(self, 'swagger_fake_view', False):
+            # Prevent errors during Swagger schema generation
+            return Booking.objects.none()
+
         user = self.request.user
         return Booking.objects.filter(user=user).order_by('-created_at')
 
